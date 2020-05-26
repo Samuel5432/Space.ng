@@ -1,0 +1,60 @@
+@model SpaceNg.Models.RequestModels.CreateUserAccountModel
+@{
+    ViewData["Title"] = "Register";
+} 
+<div class="form-container">
+        <div class="side-img">
+            <img src="~/image/workspace.png">
+        </div>
+        <div class="user-form">
+            <h1>Welcome</h1>
+            <h2> New here?</h2>
+            <p>Sign Up And Discover Amazing Workspaces </p>
+        </div>
+    <form  class="login100-form validate-form" method="post" action="Register">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <span class="login100-form-title"></span>
+        
+        <div class="wrap-input100 validate-input" data-validate = "Name is required">
+            <span asp-validation-for="Name" class="text-danger"></span>
+            <input class="input100" asp-for="Name" type="text" placeholder="Your Name">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+            </span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+            <input asp-for="Email" class="input100" type="text" placeholder="Your Email">
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Password is required">
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <input class="input100" asp-for="Password" type="password" placeholder="Password">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+            </span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate = "Password is required">
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            <input class="input100" asp-for="ConfirmPassword" type="password" placeholder="Confirm Password">
+            <span class="focus-input100"></span>
+            <span class="symbol-input100">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+            </span>
+        </div>
+        <div>
+            <p>One Of Us?<a asp-controller="WorkSpace" asp-action="Login">SIGN IN</a> We Have Missed You</p>
+        </div>
+        
+        <div class="action-btn">
+            <input type="submit" class="btn first" value="CREATE ACCOUNT">
+        </div>
+    </form>
+</div>

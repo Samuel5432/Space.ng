@@ -1,0 +1,56 @@
+@model SpaceNg.Models.RequestModels.LoginRequestModel
+@{
+    ViewData["Title"] = "Sign In";
+} 
+<head>
+    <title>Sign In | Space.ng</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="~/sign-in-style.css">
+        <link href="~/https://fonts.googleapis.com/css?family=poppins:600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="side-img">
+            <img src="~/image/login-img.png">
+        </div>
+        <div class="user-form">
+            <h1 class="login-header">Welcome</h1>
+            <h2>One Of Us?</h2>
+            <p>Already Have An Account Just? Sign In. We Have Missed You!</p>
+            
+            <form  class="login100-form validate-form" method="post" action="">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <span class="login100-form-title"></span>
+                <div class="input-wrapper">
+                
+                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input asp-for="Email" class="input100" type="text" placeholder="Enter Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <input class="input100" asp-for="Password" type="password" placeholder="Enter Password">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <p>NEW HERE?<a asp-controller="WorkSpace" asp-action="Register">SIGN UP</a>And Discover Amazing Workspaces</p>
+                    </p>
+                </div>
+
+                <div class="action-btn">
+                    <input type="submit" class="btn first" value="Sign In">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
